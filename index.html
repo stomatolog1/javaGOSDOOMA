@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="border: 1px solid rgb(0, 0, 0);">
+        <tbody>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">1</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">2</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">3</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">4</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">5</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid rgb(0, 0, 0);">6</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">6</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">6</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">6</td>
+            <td style="border: 1px solid rgb(0, 0, 0);">6</td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        let numText = []
+        for(let j = 1; j < 12; j+=2){
+          let temp = 0
+            let a = []
+            for (let i = 0; i < 5; i++){
+              a[i] = Math.floor(Math.random() * 100 + 1)
+            }
+            for (let i = 1; i < 10; i+=2){
+              if(a[temp] >= 50){
+                document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].innerText = a[temp]
+                document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].style.background = "red";
+                temp++
+              }
+              else{
+                document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].innerText = a[temp]
+                temp++
+              }
+            }
+          }
+         function foo(){
+            let b= Math.floor(Math.random() * 100 + 1)
+            let i =  Math.floor(Math.random() * ((10 - 1) / 2 + 1)) * 2 + 1
+            let j =  Math.floor(Math.random() * ((11- 1) / 2 + 1)) * 2 + 1
+            console.log(i)
+            console.log(j)
+            if(i % 2 != 0 && j % 2 != 0){
+            if(b >= 50){
+            document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].innerText = b
+            document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].style.background = "red";
+            }
+            else{
+              document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].innerText = b
+            document.body.childNodes[1].childNodes[1].childNodes[j].childNodes[i].style.background = "white";
+            }
+           }
+         }
+      </script>
+      <button onclick="foo()">Добавить число</button>
+</body>
+</html>
